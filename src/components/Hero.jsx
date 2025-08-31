@@ -85,19 +85,19 @@ const Hero = () => {
           animate="visible"
         >
           <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-snug"
+            className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-white leading-snug"
             variants={itemVariants}
           >
             Data Science Enthusiast | Python & Analytics Learner
           </motion.h2>
 
-
           <motion.p
-            className="text-gray-400 text-base sm:text-lg md:text-xl max-w-md"
+            className="text-gray-400 text-sm sm:text-base md:text-base lg:text-lg max-w-md"
             variants={itemVariants}
           >
             I’m Mohamed Ashfag A, passionate about Data Science and Analytics with hands-on experience in Python, SQL, and Data Visualization. I enjoy exploring datasets, building dashboards, and turning raw data into meaningful insights while continuously learning new technologies.
           </motion.p>
+
 
 
 
@@ -178,56 +178,65 @@ const Hero = () => {
 
         {/* Right Side - Square Profile Photo */}
         <motion.div
-          className="hidden md:flex md:w-1/2 justify-center items-center"
+          className="flex w-full justify-center items-center"
           variants={photoVariants}
           initial="hidden"
           animate="visible"
           whileHover="hover"
         >
           <div className="relative">
+            {/* Background Glow */}
             <motion.div
               className="absolute -inset-6 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-70 blur-xl rounded-lg"
               animate={floatingAnimation}
             />
+
+            {/* Profile Image */}
             <motion.div
-              className="relative w-80 h-80 overflow-hidden border-4 border-gray-800 shadow-2xl bg-gray-900 rounded-lg"
+              className="relative w-56 sm:w-64 md:w-72 lg:w-80 h-56 sm:h-64 md:h-72 lg:h-80 overflow-hidden border-4 border-gray-800 shadow-2xl bg-gray-900 rounded-lg"
               whileHover={{
                 scale: 1.05,
-                transition: { type: "spring", stiffness: 300 }
+                transition: { type: "spring", stiffness: 300 },
               }}
             >
               <motion.img
                 src="/image.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover"
-                initial={{ scale: 1.1 }}
+                initial={{ scale: 1.05 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.5 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             </motion.div>
+
+            {/* Badge */}
             <motion.div
-              className="absolute bottom-4 right-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-bold px-3 py-2 rounded-md"
+              className="absolute bottom-3 right-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-xs sm:text-sm font-semibold px-2 py-1 rounded-md"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 1.2, type: "spring" }}
             >
               Available for work
             </motion.div>
+
+            {/* Decorative Corners */}
             <motion.div
-              className="absolute -bottom-3 -left-3 w-24 h-24 border-t-4 border-l-4 border-cyan-500 opacity-80"
+              className="absolute -bottom-2 -left-2 w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 border-t-4 border-l-4 border-cyan-500 opacity-70"
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.8 }}
               transition={{ delay: 1.5 }}
             />
             <motion.div
-              className="absolute -top-3 -right-3 w-24 h-24 border-b-4 border-r-4 border-blue-500 opacity-80"
+              className="absolute -top-2 -right-2 w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 border-b-4 border-r-4 border-blue-500 opacity-70"
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.8 }}
               transition={{ delay: 1.5 }}
             />
           </div>
         </motion.div>
+
+
       </motion.div>
 
       {/* Background Animated Elements */}
